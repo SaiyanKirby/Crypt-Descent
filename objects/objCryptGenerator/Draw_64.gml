@@ -8,3 +8,5 @@
 		draw_text(8 + ix*12, 8 + iy*12, str);
 		}
 	};*/
+
+draw_text(8,8,"Press space to regenerate the dungeon.\nPress WASD or arrow keys to move.");
