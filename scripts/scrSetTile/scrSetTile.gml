@@ -4,6 +4,6 @@
 /// @param {real} y The y cell of the tile in the tilemap
 /// @param {real} index The index to set the tile to
 
-var data = tile_get_index(tilemap);
+var data = tile_get_index(global.tilemap);
 data = tile_set_index(data,argument2);
-tilemap_set(tilemap,data,argument0,argument1);
+tilemap_set(global.tilemap,data,argument0,argument1);

@@ -1,5 +1,21 @@
-return [spaces.ground,
-choose(spaces.ground,spaces.topwall),
-choose(spaces.ground,spaces.rightwall),
-choose(spaces.ground,spaces.bottomwall),
-choose(spaces.ground,spaces.leftwall)];
+var design = [choose(spaces.ground),
+choose(spaces.ground,spaces.wall),
+choose(spaces.ground,spaces.wall),
+choose(spaces.ground,spaces.wall),
+choose(spaces.ground,spaces.wall)];
+
+if(irandom_range(1,8) == 1)
+	{design[irandom_range(1,5)] = spaces.potion;}
+
+//rotate towards previous room
+
+if(design[1] == spaces.wall)
+	{design[1] = spaces.topwall;};
+if(design[2] == spaces.wall)
+	{design[2] = spaces.rightwall;};
+if(design[3] == spaces.wall)
+	{design[3] = spaces.bottomwall;};
+if(design[4] == spaces.wall)
+	{design[4] = spaces.leftwall;};
+
+return design;

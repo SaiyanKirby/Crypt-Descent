@@ -1,19 +1,19 @@
 randomize();
 
 tilelayer = layer_get_id("layerTileset");
-tilemap = layer_tilemap_get_id(tilelayer);
+global.tilemap = layer_tilemap_get_id(tilelayer);
 
 //set up room for dungeon creation
-tile_size = 32; //size of tiles in pixels
-crypt_room_number = 32; // number of "rooms" per floor
+#macro tile_size 32 //size of tiles in pixels
+crypt_room_number = 16; // number of "rooms" per floor
 floor_size = (crypt_room_number * 2) + 1; // add some padding, just in case
 
 room_width = tile_size * floor_size * 3;
 room_height = tile_size * floor_size * 3;
 
-tilemap_clear(tilemap, 0);
-tilemap_set_width(tilemap, floor_size * 3);
-tilemap_set_height(tilemap, floor_size * 3);
+tilemap_clear(global.tilemap, 0);
+tilemap_set_width(global.tilemap, floor_size * 3);
+tilemap_set_height(global.tilemap, floor_size * 3);
 
 cryptGrid = ds_grid_create(floor_size,floor_size);
 ds_grid_clear(cryptGrid, 0);
