@@ -186,7 +186,7 @@
             "Key": "a8a92175-e096-4e7a-afdb-1c1e04060760",
             "Value": {
                 "id": "5a2f5331-80c3-4501-99bf-d1c843926cb7",
-                "resourcePath": "scripts\\scrCreateRoom\\scrCreateRoom.yy",
+                "resourcePath": "scripts\\scrCreateCryptRoom\\scrCreateCryptRoom.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -255,6 +255,14 @@
             }
         },
         {
+            "Key": "fa585729-09e3-49e0-ba40-893bff54d430",
+            "Value": {
+                "id": "810fd8ae-85c8-44d3-b092-209b7d85018c",
+                "resourcePath": "scripts\\scrSetTile\\scrSetTile.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "fdea8e54-0830-4d83-98ee-58407317e9f6",
             "Value": {
                 "id": "1b6b7bcd-bd69-4853-9acb-56e6edd1ee45",
@@ -264,6 +272,7 @@
         }
     ],
     "script_order": [
+        "fa585729-09e3-49e0-ba40-893bff54d430",
         "a8a92175-e096-4e7a-afdb-1c1e04060760"
     ],
     "tutorial": ""
