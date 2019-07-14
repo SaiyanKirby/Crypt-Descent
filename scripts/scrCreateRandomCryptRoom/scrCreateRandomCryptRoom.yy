@@ -1,8 +1,8 @@
 {
-    "id": "a8a92175-e096-4e7a-afdb-1c1e04060760",
+    "id": "2a866379-f682-4a0f-af09-45066ed88747",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scrCreateCryptRoom",
+    "name": "scrCreateRandomCryptRoom",
     "IsCompatibility": false,
     "IsDnD": false
 }

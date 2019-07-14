@@ -63,6 +63,14 @@
             }
         },
         {
+            "Key": "2a866379-f682-4a0f-af09-45066ed88747",
+            "Value": {
+                "id": "07a754fb-ec8e-437e-a14c-949f449dd30e",
+                "resourcePath": "scripts\\scrCreateRandomCryptRoom\\scrCreateRandomCryptRoom.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "2b4ee4b7-c4d0-4f54-ab3f-5d985c33b7ae",
             "Value": {
                 "id": "fb2ebf17-697c-458c-b2f7-7e04c972ca9c",
@@ -186,7 +194,7 @@
             "Key": "a8a92175-e096-4e7a-afdb-1c1e04060760",
             "Value": {
                 "id": "5a2f5331-80c3-4501-99bf-d1c843926cb7",
-                "resourcePath": "scripts\\scrCreateCryptRoom\\scrCreateCryptRoom.yy",
+                "resourcePath": "scripts\\scrBuildCryptRoom\\scrBuildCryptRoom.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -273,7 +281,8 @@
     ],
     "script_order": [
         "fa585729-09e3-49e0-ba40-893bff54d430",
-        "a8a92175-e096-4e7a-afdb-1c1e04060760"
+        "a8a92175-e096-4e7a-afdb-1c1e04060760",
+        "2a866379-f682-4a0f-af09-45066ed88747"
     ],
     "tutorial": ""
 }

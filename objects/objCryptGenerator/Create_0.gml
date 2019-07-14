@@ -1,10 +1,12 @@
+randomize();
+
 tilelayer = layer_get_id("layerTileset");
 tilemap = layer_tilemap_get_id(tilelayer);
 
 //set up room for dungeon creation
 tile_size = 32; //size of tiles in pixels
-crypt_room_number = 1; // number of "rooms" per floor
-floor_size = (crypt_room_number * 2) + 2; // add some padding, just in case
+crypt_room_number = 32; // number of "rooms" per floor
+floor_size = (crypt_room_number * 2) + 1; // add some padding, just in case
 
 room_width = tile_size * floor_size * 3;
 room_height = tile_size * floor_size * 3;
@@ -19,7 +21,8 @@ ds_grid_clear(cryptGrid, 0);
 /*
 Room data is stored as a 5-entry array.
 The first index is the center tile, then top, right, bottom and left respectively.
-Each entry is a number denoting what type of space it is:
+Each entry is a number denoting what type of space it is.
+See the enum below:
 */
 #region spaces enum
 enum spaces
@@ -48,13 +51,18 @@ enum spaces
 #endregion
 
 var center = floor(floor_size/2); //get center of map to create a room
-var cryptroomdesign = [spaces.ground,spaces.ground,spaces.ground,spaces.ground,spaces.ground];
-scrCreateCryptRoom(center, center, cryptroomdesign);
-scrCreateCryptRoom(center+1, center, cryptroomdesign);
-scrCreateCryptRoom(center-1, center, cryptroomdesign);
-scrCreateCryptRoom(center, center+1, cryptroomdesign);
-scrCreateCryptRoom(center, center-1, cryptroomdesign);
+//var cryptroomdesign = [spaces.ground,spaces.ground,spaces.ground,spaces.ground,spaces.ground];
+scrBuildCryptRoom(center-1, center-1, scrCreateRandomCryptRoom());
+scrBuildCryptRoom(center,   center-1, scrCreateRandomCryptRoom());
+scrBuildCryptRoom(center+1, center-1, scrCreateRandomCryptRoom());
+scrBuildCryptRoom(center-1, center,   scrCreateRandomCryptRoom());
+scrBuildCryptRoom(center,   center,   scrCreateRandomCryptRoom());
+scrBuildCryptRoom(center+1, center,   scrCreateRandomCryptRoom());
+scrBuildCryptRoom(center-1, center+1, scrCreateRandomCryptRoom());
+scrBuildCryptRoom(center,   center+1, scrCreateRandomCryptRoom());
+scrBuildCryptRoom(center+1, center+1, scrCreateRandomCryptRoom());
 
+//set the player and camera to the start of the map
 objPlayer.x = (center * tile_size * 3) + tile_size;
 objPlayer.y = (center * tile_size * 3) + tile_size;
 with(objCamera)

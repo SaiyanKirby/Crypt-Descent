@@ -3,7 +3,7 @@ camera = camera_create();
 window_width = 960;
 window_height = 540;
 
-zoom = 2;
+zoom = 1;
 
 width = window_width / zoom;
 height = window_height / zoom;

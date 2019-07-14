@@ -1,4 +1,4 @@
-/// @function scrCreateCryptRoom(x, y, design)
+/// @function scrBuildCryptRoom(x, y, design)
 /// @description Sets a given tile index
 /// @param {real} x The x cell of the room in the room grid
 /// @param {real} y The y cell of the room in the  room grid
