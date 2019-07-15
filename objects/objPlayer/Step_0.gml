@@ -84,12 +84,12 @@ else if(!isMoving && moveTimer == 0)
 		yy += tile_size;
 		buffered_input = "";
 		}
-	else if(buffered_input = "left" || (heldLeft && !heldLeft))
+	else if(buffered_input = "left" || (heldLeft && !heldRight))
 		{
 		xx -= tile_size;
 		buffered_input = "";
 		}
-	else if(buffered_input = "right" || (heldRight && !heldRight))
+	else if(buffered_input = "right" || (heldRight && !heldLeft))
 		{
 		xx += tile_size;
 		buffered_input = "";
