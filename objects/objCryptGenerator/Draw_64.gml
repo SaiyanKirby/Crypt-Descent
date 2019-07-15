@@ -8,7 +8,7 @@ for(var iy = 0; iy < floor_size; iy++)
 		{str += (global.cryptGrid[# ix, iy] != -1 ? "o" : " ") + " ";}
 	str += "\n";
 	};
-draw_text(8, 60, str);
+draw_text(8, 68, str);
 
 //print the design of the current room the player's in
 var xx = scrGetCellX(objPlayer.x);

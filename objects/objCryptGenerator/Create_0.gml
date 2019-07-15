@@ -11,9 +11,9 @@ floor_size = (crypt_room_number * 2) + 1; // add some padding, just in case
 room_width = tile_size * floor_size * 3;
 room_height = tile_size * floor_size * 3;
 
-tilemap_clear(global.tilemap, 0);
 tilemap_set_width(global.tilemap, floor_size * 3);
 tilemap_set_height(global.tilemap, floor_size * 3);
+tilemap_clear(global.tilemap, 63);
 
 global.cryptGrid = ds_grid_create(floor_size,floor_size);
 ds_grid_clear(global.cryptGrid, -1);

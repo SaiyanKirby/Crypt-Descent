@@ -1,11 +1,11 @@
 var design = [choose(spaces.ground),
 choose(spaces.ground,spaces.wall),
 choose(spaces.ground,spaces.wall),
-choose(spaces.ground,spaces.wall),
+spaces.ground,
 choose(spaces.ground,spaces.wall)];
 
-if(irandom_range(1,8) == 1)
-	{design[irandom_range(1,5)] = spaces.potion;}
+if(irandom_range(1,4) == 1)
+	{design[irandom(4)] = spaces.potion;}
 
 //rotate towards previous room
 

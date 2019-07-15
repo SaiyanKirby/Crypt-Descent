@@ -30,6 +30,13 @@ switch(argument1)
 	}
 
 //reorient walls
-//if(newdesign
+if(scrTileIsWall(newdesign[1]))
+	{newdesign[1] = spaces.topwall;};
+if(scrTileIsWall(newdesign[2]))
+	{newdesign[2] = spaces.rightwall;};
+if(scrTileIsWall(newdesign[3]))
+	{newdesign[3] = spaces.bottomwall;};
+if(scrTileIsWall(newdesign[4]))
+	{newdesign[4] = spaces.leftwall;};
 
 return newdesign;
