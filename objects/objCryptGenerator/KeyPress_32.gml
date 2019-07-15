@@ -1,8 +1,9 @@
 /// @description Recreate rooms
 
 //clear map
-tilemap_clear(global.tilemap, 0);
+tilemap_clear(global.tilemap, 63);
 ds_grid_clear(global.cryptGrid, -1);
+global.rooms_created = 0;
 
 //create new random rooms
 var center = floor(floor_size/2);

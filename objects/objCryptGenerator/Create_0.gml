@@ -5,8 +5,9 @@ global.tilemap = layer_tilemap_get_id(tilelayer);
 
 //set up room for dungeon creation
 #macro tile_size 32 //size of tiles in pixels
-crypt_room_number = 4; // number of "rooms" per floor
-floor_size = (crypt_room_number * 2) + 1; // add some padding, just in case
+global.crypt_room_number = 16; // number of "rooms" per floor
+global.rooms_created = 0; // current number of rooms
+floor_size = (global.crypt_room_number * 2) + 1; // add some padding, just in case
 
 room_width = tile_size * floor_size * 3;
 room_height = tile_size * floor_size * 3;

@@ -22,3 +22,5 @@ scrSetTile(tileX+2,	tileY+1,	design[2]);
 scrSetTile(tileX,	tileY+2,	spaces.bottomleftcorner);
 scrSetTile(tileX+1,	tileY+2,	design[3]);
 scrSetTile(tileX+2,	tileY+2,	spaces.bottomrightcorner);
+
+global.rooms_created++;
