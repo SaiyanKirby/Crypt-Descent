@@ -2,19 +2,20 @@
 
 //clear map
 tilemap_clear(global.tilemap, 0);
-ds_grid_clear(cryptGrid, 0);
+ds_grid_clear(global.cryptGrid, -1);
 
 //create new random rooms
 var center = floor(floor_size/2);
-scrBuildCryptRoom(center-1, center-1, scrCreateRandomCryptRoom());
-scrBuildCryptRoom(center,   center-1, scrCreateRandomCryptRoom());
-scrBuildCryptRoom(center+1, center-1, scrCreateRandomCryptRoom());
-scrBuildCryptRoom(center-1, center,   scrCreateRandomCryptRoom());
-scrBuildCryptRoom(center,   center,   scrCreateRandomCryptRoom());
-scrBuildCryptRoom(center+1, center,   scrCreateRandomCryptRoom());
-scrBuildCryptRoom(center-1, center+1, scrCreateRandomCryptRoom());
-scrBuildCryptRoom(center,   center+1, scrCreateRandomCryptRoom());
-scrBuildCryptRoom(center+1, center+1, scrCreateRandomCryptRoom());
+scrBuildCryptRoom(center, center, [1,1,1,1,1]);
+//scrBuildCryptRoom(center-1, center-1, scrCreateRandomCryptRoom());
+//scrBuildCryptRoom(center,   center-1, scrCreateRandomCryptRoom());
+//scrBuildCryptRoom(center+1, center-1, scrCreateRandomCryptRoom());
+//scrBuildCryptRoom(center-1, center,   scrCreateRandomCryptRoom());
+//scrBuildCryptRoom(center,   center,   scrCreateRandomCryptRoom());
+//scrBuildCryptRoom(center+1, center,   scrCreateRandomCryptRoom());
+//scrBuildCryptRoom(center-1, center+1, scrCreateRandomCryptRoom());
+//scrBuildCryptRoom(center,   center+1, scrCreateRandomCryptRoom());
+//scrBuildCryptRoom(center+1, center+1, scrCreateRandomCryptRoom());
 
 //set the player and camera to the start of the map
 objPlayer.x = (center * tile_size * 3) + tile_size;

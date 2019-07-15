@@ -2,7 +2,7 @@
 /// @description Sets a given tile index
 /// @param {real} x The x cell of the room in the room grid
 /// @param {real} y The y cell of the room in the  room grid
-/// @param {array} index The design to create the room with
+/// @param {array} design The design to create the room with
 
 var gridX = argument0;
 var gridY = argument1;
@@ -11,7 +11,7 @@ var design = argument2;
 var tileX = gridX * 3;
 var tileY = gridY * 3;
 
-cryptGrid[# gridX, gridY] = 1;
+global.cryptGrid[# gridX, gridY] = design;
 
 scrSetTile(tileX,	tileY,		spaces.topleftcorner);
 scrSetTile(tileX+1,	tileY,		design[1]);

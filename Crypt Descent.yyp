@@ -159,6 +159,22 @@
             }
         },
         {
+            "Key": "62fcca73-9e74-4de5-9d69-735a051212f5",
+            "Value": {
+                "id": "07df85ae-b73e-4b93-b3b8-9a94ba41e575",
+                "resourcePath": "views\\62fcca73-9e74-4de5-9d69-735a051212f5.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "729b9123-94f9-4ea6-bf26-b6921ea6b04c",
+            "Value": {
+                "id": "42982e69-1dd2-4326-99a4-9168f1ae82e8",
+                "resourcePath": "scripts\\scrGetCellX\\scrGetCellX.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "747ccc67-6d83-4497-b1c5-5f79b4b7974a",
             "Value": {
                 "id": "ad4c6c76-8cbe-4100-952c-ea41b81cad01",
@@ -180,6 +196,14 @@
                 "id": "f8dcccb0-d0e9-47a3-859b-60b024a40d85",
                 "resourcePath": "views\\8367fc0f-5860-4534-8021-ef407156a7a5.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "9241d712-5bac-4cc9-a8c7-26f8ec01805f",
+            "Value": {
+                "id": "53e60694-6d39-4991-a66d-e4927b05a5dd",
+                "resourcePath": "scripts\\scrCanMove\\scrCanMove.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -247,6 +271,14 @@
             }
         },
         {
+            "Key": "c3bf78d7-dd66-4d6c-a374-51ee1f4de316",
+            "Value": {
+                "id": "6120d227-518c-43cf-bdf7-9bf8ff7145f2",
+                "resourcePath": "scripts\\scrGetCellY\\scrGetCellY.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "cc5bf165-a5a3-4e25-b6c3-79da736454c5",
             "Value": {
                 "id": "01603e89-de4d-4f12-8cb0-85df629c7f6f",
@@ -295,6 +327,14 @@
             }
         },
         {
+            "Key": "f596ac8c-02f7-42d6-aecb-90b12680c1f5",
+            "Value": {
+                "id": "8727abef-4f98-4de6-bbed-d39029a7afcc",
+                "resourcePath": "scripts\\scrRotateCryptRoom\\scrRotateCryptRoom.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "fa585729-09e3-49e0-ba40-893bff54d430",
             "Value": {
                 "id": "810fd8ae-85c8-44d3-b092-209b7d85018c",
@@ -317,7 +357,11 @@
         "a8a92175-e096-4e7a-afdb-1c1e04060760",
         "2a866379-f682-4a0f-af09-45066ed88747",
         "3fbfcd7a-693c-4a2c-aaa0-b9b0dc852416",
-        "a68023af-4a38-4eff-b20a-8a634f2f022d"
+        "a68023af-4a38-4eff-b20a-8a634f2f022d",
+        "f596ac8c-02f7-42d6-aecb-90b12680c1f5",
+        "729b9123-94f9-4ea6-bf26-b6921ea6b04c",
+        "c3bf78d7-dd66-4d6c-a374-51ee1f4de316",
+        "9241d712-5bac-4cc9-a8c7-26f8ec01805f"
     ],
     "tutorial": ""
 }
