@@ -31,6 +31,7 @@ canGoThroughWalls = false;
 playerDice = ds_grid_create(7,11);
 //7 wide for d4, 6, 8, 10, 12, 20, and modifier
 //11 tall for str, dex, int, fire, water, earth, air, lightning, poison, dark, holy
+playerBaseStats = [8,6,4]; //strength die, dex die, int die
 playerEquipment = ds_list_create();
 playerInventory = ds_list_create();
 playerPotions = ds_list_create();

@@ -1,12 +1,12 @@
 camera = camera_create();
 
-window_width = 960;
-window_height = 540;
+global.window_width = 960;
+global.window_height = 540;
 
 zoom = 2;
 
-width = window_width / zoom;
-height = window_height / zoom;
+width = global.window_width / zoom;
+height = global.window_height / zoom;
 
 camera_x = x;
 camera_y = y;
