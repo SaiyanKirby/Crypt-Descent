@@ -1,6 +1,6 @@
 /// @description test
 
-if(keyboard_check_pressed(vk_decimal))
+if(keyboard_check_pressed(190))
 	{
 	if(global.game_state == "explore")
 		{

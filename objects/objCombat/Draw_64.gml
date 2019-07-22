@@ -1,3 +1,6 @@
+if(!instance_exists(active_player))
+	{exit;};
+
 if(global.game_state == "combat")
 	{
 	draw_set_alpha(0.75);
@@ -13,5 +16,84 @@ if(global.game_state == "combat")
 	draw_set_halign(fa_center);
 	draw_text_transformed(240,300,"Player " + string(global.current_player),2,2,0);
 	draw_text_transformed(720,300,active_monster[0],2,2,0);
-	draw_sprite(sprDiceUI,0,150,360);
+	
+	switch(combat_state)
+		{
+		case -1:
+			#region starting state
+			{
+			break;
+			}; #endregion
+		case 0:
+			#region idle state
+			{
+			//draw dice numbers
+			if(!show_all_dice)
+				{}
+			else
+				{
+				//draw entire dice grid
+				//--player--
+				draw_sprite(sprDiceUI,0,150,360);
+				var xx = 0;
+				var yy = 0;
+				var d = 0;
+				for(xx = 0; xx < 8; xx++)
+					{
+					for(yy = 0; yy < 11; yy++)
+						{
+						d = active_player.playerDice[# xx, yy];
+						if(d != 0)
+							{
+							if(xx == 7)
+								{draw_text(188 + (xx * 18), 382 + (yy * 13), string(d));}
+							else	
+								{draw_text(185 + (xx * 18), 382 + (yy * 13), string(d));}
+							}
+						}
+					}
+				//--monster--
+				draw_sprite(sprDiceUI,0,635,360);
+				var xx = 0;
+				var yy = 0;
+				var d = 0;
+				for(xx = 0; xx < 8; xx++)
+					{
+					for(yy = 0; yy < 11; yy++)
+						{
+						d = monster_dice[# xx, yy];
+						if(d != 0)
+							{
+							if(xx == 7)
+								{draw_text(673 + (xx * 18), 382 + (yy * 13), string(d));}
+							else	
+								{draw_text(670 + (xx * 18), 382 + (yy * 13), string(d));}
+							}
+						}
+					}
+				}
+			break;
+			
+			}; #endregion
+		case 1:
+			#region player attacks
+			{
+			break;
+			}; #endregion
+		case 2:
+			#region monster attacks
+			{
+			break;
+			}; #endregion
+		case 3:
+			#region end state (player wins)
+			{
+			break;
+			}; #endregion
+		case 4:
+			#region end state (player dies)
+			{
+			break;
+			}; #endregion
+		}
 	}

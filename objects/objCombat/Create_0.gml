@@ -20,9 +20,11 @@ states:
 0: idle
 1: player attacks
 2: monster attacks
-3: player dies
-4: monster dies
+3: end (player wins)
+4: end (player dies)
 */
+show_all_dice = true;
+//if false, calculate expected damage and show that
 
 monsters = ds_list_create();// list of all monster types
 ds_list_add(monsters,["Skeleman",sprSkeleton]);
@@ -31,5 +33,6 @@ ds_list_add(monsters,["Big Chungus",sprOrc]);
 
 active_player = instance_find(objPlayer,1);
 active_monster = ds_list_find_value(monsters,irandom(ds_list_size(monsters)-1));
-monster_dice = ds_grid_create(7,11);
-monster_dice[# 1,0] = 1;
+monster_dice = ds_grid_create(8,11);
+monster_dice[# irandom(6), irandom(2)] = 1;
+monster_dice[# irandom(6), irandom_range(3, 10)] = choose(1,2);

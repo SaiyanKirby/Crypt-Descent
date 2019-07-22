@@ -28,10 +28,15 @@ playerLevel = 1;
 playerEXP = 0;
 playerSpeed = 4;
 canGoThroughWalls = false;
-playerDice = ds_grid_create(7,11);
-//7 wide for d4, 6, 8, 10, 12, 20, and modifier
-//11 tall for str, dex, int, fire, water, earth, air, lightning, poison, dark, holy
-playerBaseStats = [8,6,4]; //strength die, dex die, int die
+playerDice = ds_grid_create(8,11);
+//7 wide for d4, 6, 8, 10, 12, 20, modifier, defense
+// 11 tall for str, dex, int, fire, water, earth, air, lightning, poison, dark, holy
+playerBaseStats = [2,1,0,2]; // start with STR 1d8, DEX 1d6, INT 1d4, 2 Defense
+playerDice[# playerBaseStats[0], 0] = 1;
+playerDice[# playerBaseStats[1], 1] = 1;
+playerDice[# playerBaseStats[2], 2] = 1;
+playerDice[# 7, 0] = playerBaseStats[3];
+playerDice[# 7, 10] = 69;
 playerEquipment = ds_list_create();
 playerInventory = ds_list_create();
 playerPotions = ds_list_create();
