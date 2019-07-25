@@ -25,7 +25,9 @@ if(global.game_state == "combat")
 			break;
 			}; #endregion
 		case 0:
-			#region idle state
+		case 1:
+		case 2:
+			#region idle state, attacking states
 			{
 			//draw dice numbers
 			if(!show_all_dice)
@@ -72,9 +74,11 @@ if(global.game_state == "combat")
 						}
 					}
 				}
-			break;
+			//break;
 			
 			}; #endregion
+		#region commented out
+			/*
 		case 1:
 			#region player attacks
 			{
@@ -85,6 +89,8 @@ if(global.game_state == "combat")
 			{
 			break;
 			}; #endregion
+			*/
+		#endregion
 		case 3:
 			#region end state (player wins)
 			{
@@ -96,4 +102,5 @@ if(global.game_state == "combat")
 			break;
 			}; #endregion
 		}
+	part_system_drawit(p_system);
 	}

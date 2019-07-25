@@ -1,8 +1,7 @@
-if(global.game_state != "explore")
-	{exit;}
+/*if(global.game_state != "explore")
+	{exit;}*/
 
 //draw_text(20,20,string(room_width) + ", " + string(room_height));
-draw_set_halign(fa_left);
 
 //print every room that's been generated
 /*var str = ""
@@ -30,8 +29,3 @@ else
 draw_text(8, 392, "World Pos: " + string(objPlayer.x) + ", " + string(objPlayer.y));
 draw_text(8, 416, "Room Pos: " + string(xx) + ", " + string(yy));
 draw_text(8, 440, str);*/
-
-draw_text(8,8,"Press space to regenerate the dungeon.\nPress WASD or arrow keys to move.\nPress numpad +/- to zoom in/out.");
-draw_set_halign(fa_center);
-draw_text_transformed(480,500,string(global.rooms_created) + " / " + string(global.crypt_room_number) + " rooms",2,2,0);
-draw_set_halign(fa_left);

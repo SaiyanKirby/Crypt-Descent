@@ -36,7 +36,6 @@ playerDice[# playerBaseStats[0], 0] = 1;
 playerDice[# playerBaseStats[1], 1] = 1;
 playerDice[# playerBaseStats[2], 2] = 1;
 playerDice[# 7, 0] = playerBaseStats[3];
-playerDice[# 7, 10] = 69;
 playerEquipment = ds_list_create();
 playerInventory = ds_list_create();
 playerPotions = ds_list_create();
