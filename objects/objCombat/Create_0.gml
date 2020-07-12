@@ -13,6 +13,10 @@ m_xscale = 4;
 m_yscale = 4;
 m_angle = 0;
 
+//bpm of the combat song, to sync bounces to
+song_timer = 0;
+bpm = 155;
+
 combat_state = -1;
 /*
 states:
@@ -23,7 +27,7 @@ states:
 3: end (player wins)
 4: end (player dies)
 */
-show_all_dice = true;
+show_all_dice = false;
 //if false, calculate expected damage and show that
 
 monsters = ds_list_create();// list of all monster types
@@ -45,10 +49,10 @@ p_dice = part_type_create();
 part_system_automatic_draw(p_system, false);
 part_emitter_region(p_system, p_emitter_p, 240, 240, 260, 260, ps_shape_ellipse, ps_distr_gaussian);
 part_emitter_region(p_system, p_emitter_m, 720, 720, 250, 250, ps_shape_ellipse, ps_distr_gaussian);
-part_type_life(p_dice, 30, 90);
-part_type_alpha2(p_dice, 1, 0);
+part_type_life(p_dice, 20, 60);
+part_type_alpha3(p_dice, 1, 1, 0);
 part_type_sprite(p_dice, sprDice, false, false, true);
-part_type_size(p_dice, 0.5, 0.5, 0, 0);
+part_type_size(p_dice, 1, 1, 0, 0);
 part_type_direction(p_dice, 45, 135, 0, 0);
 part_type_orientation(p_dice, 0, 360, 10, 0, true);
 part_type_speed(p_dice, 3, 6, -0.05, 0);

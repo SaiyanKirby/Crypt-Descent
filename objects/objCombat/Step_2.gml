@@ -1,10 +1,16 @@
 if(global.game_state == "combat")
 	{
 	//animate player/monster
-	var p_x_waggle = sin(current_time / 200) * 5;
-	var p_y_waggle = sin(current_time / 250) * 5;
-	var m_x_waggle = sin((current_time + 500) / 200) * 5;
-	var m_y_waggle = sin((current_time + 500) / 250) * 5;
+	++song_timer;
+	//bpm is 155
+	//(360 * (bpm/60) * 0.1) = 93
+	if(song_timer >= 93) {song_timer = 0;}
+	var cycle = degtorad(song_timer * bpm * 0.1);
+	//the bounces try to sync with the song
+	var p_x_waggle = cos(cycle / 2) * 10;
+	var p_y_waggle = cos(cycle) * 5;
+	var m_x_waggle = cos(cycle / 2) * -10;
+	var m_y_waggle = cos(cycle) * 5;
 	
 	switch(combat_state)
 		{
@@ -12,32 +18,34 @@ if(global.game_state == "combat")
 			#region starting state
 			{
 			++timer;
-			if(timer < 20)
+			if(timer < 30)
 				{
 				p_x = lerp(p_x, 240, 0.2);
 				p_y = 260;
 				m_x = lerp(m_x, 720, 0.2);
 				m_y = 260;
 				}
-			else if(timer < 90)
+			else// if(timer < 90)
 				{
 				p_x = 240 + random((timer / 30) * 5);
 				p_y = 260 + random((timer / 30) * 5);
 				m_x = 720 + random((timer / 30) * 5);
 				m_y = 260 + random((timer / 30) * 5);
 				}
-			else
+			if(!audio_exists(global.music))
 				{
+				//audio_stop_sound(global.music);
+				global.music = audio_play_sound(sndFightLoop,100,true);
 				timer = 0;
+				song_timer = 0;
 				combat_state = 0;
-				};
+				}
 			break;
 			}
 			#endregion
 		case 0:
 			#region idle state
 			{
-			++timer;
 			p_x = 240 + p_x_waggle;
 			p_y = 260 + p_y_waggle;
 			m_x = 720 + m_x_waggle;
@@ -108,12 +116,30 @@ if(global.game_state == "combat")
 			else
 				{
 				timer = 0;
-				combat_state = 0;
+				combat_state = 3;//!!temporary!!
 				}
 			break;
 			}
 			#endregion
 		case 3:
+			#region player wins
+			{
+			global.game_state = "explore";
+			audio_stop_sound(global.music);
+			global.music = audio_play_sound(sndExplore,100,true);
+			++global.current_player;
+			if(global.current_player > global.max_players)
+				{global.current_player = 1;}
+			with(objPlayer)
+				{
+				if(global.current_player == playerNumber)
+					{objCamera.follow = self}
+				turn_start_x = x;
+				turn_start_y = y;
+				}
+			break;
+			}
+			#endregion
 		case 4:
 		default:
 			{break;}

@@ -15,6 +15,8 @@ x_prev = x;
 y_prev = y;
 x_next = x;
 y_next = y;
+turn_start_x = x;
+turn_start_y = y;
 
 buffered_input = "";
 frames_since_buffer = 0;

@@ -13,11 +13,11 @@ camera_y = y;
 
 //camera instance following
 camera_speed = 0.1;
-follow = objPlayer;
+follow = instance_find(objPlayer,1);
 if(instance_exists(follow))
 	{
-	x = follow.x;
-	y = follow.y;
+	x = follow.x + (tile_size/2);
+	y = follow.y + (tile_size/2);
 	};
 x_to = x;
 y_to = y;

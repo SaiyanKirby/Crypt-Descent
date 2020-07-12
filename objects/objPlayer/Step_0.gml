@@ -36,19 +36,6 @@ if(global.game_state == "explore")
 			y = y_next;
 			isMoving = false;
 			moveTimer = 0;
-		
-			if(playerMovement >= playerSpeed)
-				{
-				playerMovement = 0;
-				++global.current_player;
-				if(global.current_player > global.max_players)
-					{global.current_player = 1;}
-				with(objPlayer)
-					{
-					if(global.current_player == playerNumber)
-						{objCamera.follow = self}
-					}
-				}
 			}
 		else
 			{
@@ -57,12 +44,11 @@ if(global.game_state == "explore")
 			y = lerp(y_prev, y_next, moveTimer / moveTime);
 			}
 		}
-	else if(!isMoving && moveTimer == 0)
+	else if(!isMoving && moveTimer == 0 && playerMovement < playerSpeed)
 		{
 		//round to a tile, just in case
 		x -= (x % tile_size);
 		x -= (y % tile_size);
-
 		var xx = 0;
 		var yy = 0;
 
@@ -126,6 +112,29 @@ if(global.game_state == "explore")
 			//build new room
 			scrBuildCryptRoom(xx, yy, d);
 			}
+		}
+	#endregion
+
+	#region end of turn
+	if(!isMoving && playerMovement >= playerSpeed)
+		{
+		//advance turn
+		playerMovement = 0;
+		global.game_state = "combat";
+		with(objCombat)
+			{
+			combat_state = -1;
+			timer = 0;
+			p_x = -60;
+			m_x = global.window_width + 60;
+			}
+		with(objPlayer)
+			{
+			if(global.current_player == playerNumber)
+				{objCombat.active_player = self;}
+			}
+		audio_stop_sound(global.music);
+		global.music = audio_play_sound(sndFightIntro,100,false);
 		}
 	#endregion
 	}

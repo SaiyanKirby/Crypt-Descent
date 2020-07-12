@@ -7,7 +7,7 @@ if(global.current_player == playerNumber)
 	draw_sprite(sprPlayer,playerClass,x+half_tile,y+(half_tile)-hop);
 	
 	//draw cursor
-	if(global.game_state == "explore" && !isMoving)
+	if(global.game_state == "explore" && !isMoving && playerMovement < playerSpeed)
 		{
 		var t = floor(cursorTimer / 8) % 3;
 

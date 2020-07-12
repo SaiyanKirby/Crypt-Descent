@@ -2,8 +2,11 @@
 
 if(instance_exists(follow))
 	{
-	x_to = follow.bbox_left+((follow.bbox_right-follow.bbox_left)/2);
-	y_to = follow.bbox_top+((follow.bbox_bottom-follow.bbox_top)/2);
+	//x_to = follow.bbox_left+((follow.bbox_right-follow.bbox_left)/2);
+	//y_to = follow.bbox_top+((follow.bbox_bottom-follow.bbox_top)/2);
+	
+	x_to = follow.x + (tile_size/2);
+	y_to = follow.y + (tile_size/2);
 	
 	//x_to = clamp(x_to,(width/2),(room_width-(width/2)));
 	//y_to = clamp(y_to,(height/2),(room_height-(height/2)));

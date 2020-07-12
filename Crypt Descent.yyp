@@ -42,7 +42,7 @@
             "Key": "066b79f5-c174-4e07-ad61-ca9843f9b59b",
             "Value": {
                 "id": "10677d70-6521-4c25-a6d9-787a2011eccf",
-                "resourcePath": "sounds\\sndFight\\sndFight.yy",
+                "resourcePath": "sounds\\sndFightIntro\\sndFightIntro.yy",
                 "resourceType": "GMSound"
             }
         },
@@ -103,6 +103,14 @@
             }
         },
         {
+            "Key": "1ecedbe2-08ba-4025-b980-eb2dc0e54869",
+            "Value": {
+                "id": "8a4980f1-143b-4657-9cbd-b70cb94617bf",
+                "resourcePath": "sprites\\sprTileEvent\\sprTileEvent.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "28180b85-1c52-42fc-90e8-05dc8f50dcb5",
             "Value": {
                 "id": "639a8c8c-c392-409c-9a35-b3053529be9c",
@@ -156,6 +164,14 @@
                 "id": "f5956581-3c3a-489d-861a-28d094b49446",
                 "resourcePath": "views\\2fa1adbf-6b70-41f2-a32e-d58ca7500d6d.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "367ea2b4-10f3-4ff4-97d9-e3460c122ef8",
+            "Value": {
+                "id": "9449592f-4d65-441c-9c9b-5b8670fd9800",
+                "resourcePath": "objects\\objTileObject\\objTileObject.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -271,11 +287,27 @@
             }
         },
         {
+            "Key": "7a1d5b12-54b0-4706-8c45-fc0e3ce06538",
+            "Value": {
+                "id": "b08d3c82-28a7-4d78-b67a-e3909deb5f1e",
+                "resourcePath": "sprites\\sprTilePotion\\sprTilePotion.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "8367fc0f-5860-4534-8021-ef407156a7a5",
             "Value": {
                 "id": "f8dcccb0-d0e9-47a3-859b-60b024a40d85",
                 "resourcePath": "views\\8367fc0f-5860-4534-8021-ef407156a7a5.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "860feafc-f5d2-4412-b215-d20162de15a4",
+            "Value": {
+                "id": "52af99bf-e014-40a6-9220-c5e7f82fc840",
+                "resourcePath": "sprites\\sprTilePortal\\sprTilePortal.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -324,6 +356,14 @@
                 "id": "462e8728-9c23-4884-94a3-129e5b213d90",
                 "resourcePath": "objects\\objCamera\\objCamera.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "9e3faea2-36e2-4c4b-a516-34d7cb70c348",
+            "Value": {
+                "id": "7973a555-5e27-42a8-9e63-92bb7fac4546",
+                "resourcePath": "sprites\\sprTilePixel\\sprTilePixel.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -439,6 +479,14 @@
             }
         },
         {
+            "Key": "ddc1aac7-fa08-467f-886f-ebc7292f886b",
+            "Value": {
+                "id": "9101fa19-b1f7-429d-aa97-04bc21d6da60",
+                "resourcePath": "views\\ddc1aac7-fa08-467f-886f-ebc7292f886b.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "e82f9ca5-a2dd-42bf-9d1e-c1ff6d118f7b",
             "Value": {
                 "id": "9ad30aca-db80-43f9-82b5-0f63f6d1f193",
@@ -452,6 +500,14 @@
                 "id": "2e8c3b04-e91f-481a-ac00-3f04cebfcdb2",
                 "resourcePath": "tilesets\\tilesetCrypt\\tilesetCrypt.yy",
                 "resourceType": "GMTileSet"
+            }
+        },
+        {
+            "Key": "e9a56b43-4035-45b5-a70f-e84d744d68c1",
+            "Value": {
+                "id": "4a8aa26e-798a-4353-9921-ed9cc4d92ebb",
+                "resourcePath": "sprites\\sprTileChest\\sprTileChest.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -476,6 +532,14 @@
                 "id": "8727abef-4f98-4de6-bbed-d39029a7afcc",
                 "resourcePath": "scripts\\scrRotateCryptRoom\\scrRotateCryptRoom.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "f64fdac9-37cc-4c0d-b91e-5f226d8e3c46",
+            "Value": {
+                "id": "cf143dae-fbb8-42a1-b69e-e624ace9b8f8",
+                "resourcePath": "sounds\\sndFightLoop\\sndFightLoop.yy",
+                "resourceType": "GMSound"
             }
         },
         {

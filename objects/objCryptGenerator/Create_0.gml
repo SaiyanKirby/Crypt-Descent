@@ -14,10 +14,13 @@ room_height = tile_size * floor_size * 3;
 
 tilemap_set_width(global.tilemap, floor_size * 3);
 tilemap_set_height(global.tilemap, floor_size * 3);
-tilemap_clear(global.tilemap, 63);
+tilemap_clear(global.tilemap, 15);
 
 global.cryptGrid = ds_grid_create(floor_size,floor_size);
 ds_grid_clear(global.cryptGrid, -1);
+
+global.room_deck = ds_list_create();
+ds_list_add(global.room_deck, [2,1,1,1,1]);
 
 /*
 Room data is stored as a 5-entry array.
@@ -27,48 +30,66 @@ See the enum below:
 */
 #region spaces enum
 enum spaces
-	{
+	{	
+	wall = -1,
 	empty = 0,
-	ground = 1,
-	potion = 2,
-	chest = 3,
-	event = 4,
-	water = 5,
-	lava = 6,
-	acid = 7,
-	void = 8,
-	entrystairs = 9,
-	exitstairs = 10,
-	topleftcorner = 40,
-	topwall = 41,
-	toprightcorner = 42,
-	leftwall = 48,
-	wall = 49,
-	rightwall = 50,
-	bottomleftcorner = 56,
-	bottomwall = 57,
-	bottomrightcorner = 58
+	
+	topleftnormal = 16,
+	topwallnormal = 17,
+	toprightnormal = 18,
+	leftwallnormal = 24,
+	groundnormal = 1,
+	rightwallnormal = 26,
+	bottomleftnormal = 32,
+	bottomwallnormal = 33,
+	bottomrightnormal = 34,
+	
+	topleftred = 19,
+	topwallred = 20,
+	toprightred = 21,
+	leftwallred = 27,
+	groundred = 28,
+	rightwallred = 29,
+	bottomleftred = 35,
+	bottomwallred = 36,
+	bottomrightred = 37,
+	
+	topleftgreen = 40,
+	topwallgreen = 41,
+	toprightgreen = 42,
+	groundgreen = 49,
+	leftwallgreen = 48,
+	rightwallgreen = 50,
+	bottomleftgreen = 56,
+	bottomwallgreen = 57,
+	bottomrightgreen = 58,
+	
+	topleftblue = 43,
+	topwallblue = 44,
+	toprightblue = 45,
+	leftwallblue = 51,
+	groundblue = 52,
+	rightwallblue = 53,
+	bottomleftblue = 59,
+	bottomwallnblue = 60,
+	bottomrightblue = 61,
+	
+	entrystairs = 2,
+	exitstairs = 3,
+	water = 4,
+	lava = 5,
+	acid = 6,
+	void = 7,
+	
+	event = 100,
+	potion = 101,
+	chest = 102,
+	chestartifact = 103,
+	chestset = 104,
+	portal = 105,
+	catacombs = 106,
+	pixel = 107
 	};
 #endregion
 
-var center = floor(floor_size/2);
-scrBuildCryptRoom(center, center, [1,1,1,1,1]);
-//scrBuildCryptRoom(center-1, center-1, scrCreateRandomCryptRoom());
-//scrBuildCryptRoom(center,   center-1, scrCreateRandomCryptRoom());
-//scrBuildCryptRoom(center+1, center-1, scrCreateRandomCryptRoom());
-//scrBuildCryptRoom(center-1, center,   scrCreateRandomCryptRoom());
-//scrBuildCryptRoom(center,   center,   scrCreateRandomCryptRoom());
-//scrBuildCryptRoom(center+1, center,   scrCreateRandomCryptRoom());
-//scrBuildCryptRoom(center-1, center+1, scrCreateRandomCryptRoom());
-//scrBuildCryptRoom(center,   center+1, scrCreateRandomCryptRoom());
-//scrBuildCryptRoom(center+1, center+1, scrCreateRandomCryptRoom());
-
-//set the player and camera to the start of the map
-objPlayer.x = (center * tile_size * 3) + tile_size;
-objPlayer.y = (center * tile_size * 3) + tile_size;
-with(objCamera)
-	{
-	follow = objPlayer;
-	x = follow.bbox_left+((follow.bbox_right-follow.bbox_left)/2);
-	y = follow.bbox_top+((follow.bbox_bottom-follow.bbox_top)/2);
-	};
+event_perform(ev_other, ev_user0);
