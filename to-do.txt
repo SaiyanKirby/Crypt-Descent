@@ -1,0 +1,2 @@
+cap number of rooms currently generated when attempting to create a new one
+rework combat animations to use new sequence and animation curve features

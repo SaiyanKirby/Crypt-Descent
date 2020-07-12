@@ -75,7 +75,7 @@ if(global.game_state == "explore")
 
 		if(xx != 0 || yy != 0)
 			{
-			if(scrCanMove(x + xx, y + yy))
+			if(CanMove(x + xx, y + yy))
 				{
 				x_prev = x;
 				y_prev = y;
@@ -93,24 +93,24 @@ if(global.game_state == "explore")
 	#region build out level
 	if(hasMoved)
 		{
-		var xx = scrGetCellX(x_next);
-		var yy = scrGetCellY(y_next);
+		var xx = GetCellX(x_next);
+		var yy = GetCellY(y_next);
 		var d = global.cryptGrid[# xx, yy];
 		if(!is_array(d))
 			{
-			var d = scrCreateRandomCryptRoom();
+			var d = CreateRandomCryptRoom();
 			//get player's room-space position
 			var rx = (x_next / tile_size) % 3;
 			var ry = (y_next / tile_size) % 3;
 			//rotate room as needed
 			if(rx == 1 && ry == 0)
-				{d = scrRotateCryptRoom(d, 180)};
+				{d = RotateCryptRoom(d, 180)};
 			else if(rx == 2 && ry == 1)
-				{d = scrRotateCryptRoom(d, 270)};
+				{d = RotateCryptRoom(d, 270)};
 			else if(rx == 0 && ry == 1)
-				{d = scrRotateCryptRoom(d, 90)};
+				{d = RotateCryptRoom(d, 90)};
 			//build new room
-			scrBuildCryptRoom(xx, yy, d);
+			BuildCryptRoom(xx, yy, d);
 			}
 		}
 	#endregion
